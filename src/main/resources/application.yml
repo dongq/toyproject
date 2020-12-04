@@ -1,0 +1,29 @@
+server:
+  port: 8081
+logging:
+  level:
+    root: info
+    com.rest.api: debug
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/ats?allowPublicKeyRetrieval=TRUE&serverTimezone=UTC&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ats
+    password: Welcome1
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties.hibernate:
+      hbm2ddl.auto: update
+      format_sql: true
+    showSql: true
+    generate-ddl: true
+  url:
+    base: http://127.0.0.1
+  messages:
+    basename: i18n/exception
+    encoding: UTF-8
+  thymeleaf:
+    enabled: true
+    encoding: UTF-8
+    prefix: /WEB-INF/views/
+    suffix: .html

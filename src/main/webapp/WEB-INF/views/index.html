@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Data Driven Investing</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
+    <!-- endinject -->
+    <!-- vendor css for this page -->
+    <!-- End vendor css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../resources/assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout style -->
+    <link rel="stylesheet" href="../../resources/assets/css/demo_1/style.css">
+    <!-- Layout style -->
+    <link rel="shortcut icon" href="../asssets/images/favicon.ico" />
+  </head>
+  <body class="header-fixed">
+    <!-- partial:partials/_header.html -->
+    <nav class="t-header">
+      <div class="t-header-brand-wrapper">
+        <a href="/">
+<!--          <img class="logo" src="../../resources/assets/images/logo.svg" alt="">-->
+          <img class="logo-mini" src="../../resources/assets/images/logo_mini.svg" alt="">
+        </a>
+      </div>
+      <div class="t-header-content-wrapper">
+        <div class="t-header-content">
+          <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
+            <i class="mdi mdi-menu"></i>
+          </button>
+          <ul class="nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="messageDropdown" data-toggle="dropdown" aria-expanded="false">
+                <i class="mdi mdi-message-outline mdi-1x"></i>
+                <span class="notification-indicator notification-indicator-primary notification-indicator-ripple"></span>
+              </a>
+              <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="messageDropdown">
+                <div class="dropdown-header">
+                  <h6 class="dropdown-title"><b>후원 및 기타문의</b></h6>
+                  <p class="dropdown-title-text">본 싸이트의 컨텐츠가 투자에 도움이 되신다면</p>
+                  <p class="dropdown-title-text">장기적 운영 및 신규컨텐츠 개발을 위해</p>
+                  <p class="dropdown-title-text">작은 후원을 부탁드립니다.</p>
+                </div>
+                <div class="dropdown-body">
+                  <div class="dropdown-list">
+                    <div class="image-wrapper">
+                      <img class="profile-img" src="../../resources/assets/images/naver.png" alt="naver email">
+                      <div class="status-indicator rounded-indicator bg-success"></div>
+                    </div>
+                    <div class="content-wrapper">
+                      <small class="name">Email</small><br>
+                      <small class="content-text">datainvesting@naver.com</small>
+                    </div>
+                  </div>
+                  <div class="dropdown-list">
+                    <div class="image-wrapper">
+                      <img class="profile-img" src="../../resources/assets/images/kb1.jpg" alt="KB국민은행">
+                      <div class="status-indicator rounded-indicator bg-success"></div>
+                    </div>
+                    <div class="content-wrapper">
+                      <small class="name">KB국민은행</small><br>
+                      <small class="content-text">계좌번호 : 394402-04-400611</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="page-body">
+      <!-- partial:partials/_sidebar.html -->
+      <div class="sidebar">
+        <ul class="navigation-menu">
+          <li class="nav-category-divider">MAIN</li>
+          <li>
+            <a href="/">
+              <span class="link-title">Home</span>
+              <i class="mdi mdi-gauge link-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="rim">
+              <span class="link-title">RIM</span>
+              <i class="mdi mdi-flask link-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="trend" >
+              <span class="link-title">Profit Verification</span>
+              <i class="mdi mdi-bullseye link-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="lowper">
+              <span class="link-title">Low PER</span>
+              <i class="mdi mdi-clipboard-outline link-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="consensus">
+              <span class="link-title">Consensus</span>
+              <i class="mdi mdi-chart-donut link-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="whobuy">
+              <span class="link-title">Buy&Sell</span>
+              <i class="mdi mdi-flower-tulip-outline link-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="faq">
+              <span class="link-title">FAQ</span>
+              <i class="mdi mdi-asterisk link-icon"></i>
+            </a>
+          </li>
+
+          <br>
+          <div class="sidebar-upgrade-banner2">
+            <p class="text-primary"><b>후원 및 기타문의</b></p>
+            <p class="text-gray">datainvesting@naver.com</p>
+            <p class="text-gray">KB국민은행</p>
+            <p class="text-gray">394402-04-400611</p>
+          </div>
+      </div>
+
+      <!-- partial -->
+      <div class="page-content-wrapper">
+        <div class="page-content-wrapper-inner">
+          <div class="content-viewport">
+            <div class="row">
+              <div class="col-12 py-5">
+                <h4>Data Driven Investing</h4>
+                <p class="text-gray">우리는 강에 떠있으면 바다로 간다.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-6 equel-grid">
+                <div class="grid">
+                  <div class="grid-body text-gray">
+                    <div class="d-flex justify-content-between">
+                      <p id="kospi_close"></p>
+                      <p id="kospi_rate"></p>
+                    </div>
+                    <p class="text-black" id="kospi_gubun"></p>
+                    <p class="text-gray" id="kospi_cdate"></p>
+                    <div class="wrapper w-50 mt-4">
+                      <canvas height="45" id="stat-line_1"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-6 equel-grid">
+                <div class="grid">
+                  <div class="grid-body text-gray">
+                    <div class="d-flex justify-content-between">
+                      <p id="kosdaq_close"></p>
+                      <p id="kosdaq_rate"></p>
+                    </div>
+                    <p class="text-black" id="kosdaq_gubun"></p>
+                    <p class="text-gray" id="kosdaq_cdate"></p>
+                    <div class="wrapper w-50 mt-4">
+                      <canvas height="45" id="stat-line_2"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-6 equel-grid">
+                <div class="grid">
+                  <div class="grid-body text-gray">
+                    <div class="d-flex justify-content-between">
+                      <p id="dow_close"></p>
+                      <p id="dow_rate"></p>
+                    </div>
+                    <p class="text-black" id="dow_gubun"></p>
+                    <p class="text-gray" id="dow_cdate"></p>
+                    <div class="wrapper w-50 mt-4">
+                      <canvas height="45" id="stat-line_3"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-6 equel-grid">
+                <div class="grid">
+                  <div class="grid-body text-gray">
+                    <div class="d-flex justify-content-between">
+                      <p id="nasdaq_close"></p>
+                      <p id="nasdaq_rate"></p>
+                    </div>
+                    <p class="text-black" id="nasdaq_gubun"></p>
+                    <p class="text-gray" id="nasdaq_cdate"></p>
+                    <div class="wrapper w-50 mt-4">
+                      <canvas height="45" id="stat-line_4"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="grid">
+                    <p class="grid-header">각 지수별 Performance(%)</p>
+                    <div>
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#bar_1w" aria-controls="home" role="tab" data-toggle="tab"> Week |</a></li>
+                        <li role="presentation" ><a href="#bar_1m" aria-controls="profile" role="tab" data-toggle="tab"> 1M | </a></li>
+                        <li role="presentation" ><a href="#bar_3m" aria-controls="profile" role="tab" data-toggle="tab"> 3M | </a></li>
+                        <li role="presentation" ><a href="#bar_6m" aria-controls="profile" role="tab" data-toggle="tab"> 6M | </a></li>
+                        <li role="presentation" ><a href="#bar_1y" aria-controls="profile" role="tab" data-toggle="tab"> 1Y | </a></li>
+                        <li role="presentation" ><a href="#bar_2y" aria-controls="profile" role="tab" data-toggle="tab"> 2Y | </a></li>
+                        <li role="presentation" ><a href="#bar_3y" aria-controls="profile" role="tab" data-toggle="tab"> 3Y | </a></li>
+                        <li role="presentation" ><a href="#bar_5y" aria-controls="profile" role="tab" data-toggle="tab"> 5Y </a></li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="col-md-6 tab-pane active" id="bar_1w">
+                          <div class="grid">
+                            <div class="grid-body">
+                              <h2 class="grid-title">1 Week</h2>
+                              <div class="item-wrapper">
+                                <canvas id="chartjs-bar-chart_1w" width="600" height="400"></canvas>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 tab-pane" id="bar_1m">
+                          <div class="grid">
+                            <div class="grid-body">
+                              <h2 class="grid-title">1 Month</h2>
+                              <div class="item-wrapper">
+                                <canvas id="chartjs-bar-chart_1m" width="600" height="400"></canvas>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 tab-pane" id="bar_3m">
+                          <div class="grid">
+                            <div class="grid-body">
+                              <h2 class="grid-title">3 Month</h2>
+                              <div class="item-wrapper">
+                                <canvas id="chartjs-bar-chart_3m" width="600" height="400"></canvas>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 tab-pane" id="bar_6m">
+                          <div class="grid">
+                            <div class="grid-body">
+                              <h2 class="grid-title">6 Month</h2>
+                              <div class="item-wrapper">
+                                <canvas id="chartjs-bar-chart_6m" width="600" height="400"></canvas>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 tab-pane" id="bar_1y">
+                          <div class="grid">
+                            <div class="grid-body">
+                              <h2 class="grid-title">1 Year</h2>
+                              <div class="item-wrapper">
+                                <canvas id="chartjs-bar-chart_1y" width="600" height="400"></canvas>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 tab-pane" id="bar_2y">
+                          <div class="grid">
+                            <div class="grid-body">
+                              <h2 class="grid-title">2 Year</h2>
+                              <div class="item-wrapper">
+                                <canvas id="chartjs-bar-chart_2y" width="600" height="400"></canvas>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 tab-pane" id="bar_3y">
+                          <div class="grid">
+                            <div class="grid-body">
+                              <h2 class="grid-title">3 Year</h2>
+                              <div class="item-wrapper">
+                                <canvas id="chartjs-bar-chart_3y" width="600" height="400"></canvas>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 tab-pane" id="bar_5y">
+                          <div class="grid">
+                            <div class="grid-body">
+                              <h2 class="grid-title">5 Year</h2>
+                              <div class="item-wrapper">
+                                <canvas id="chartjs-bar-chart_5y" width="600" height="400"></canvas>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="col-md-8 equel-grid">
+                <div class="grid">
+                  <div class="grid-body">
+                    <div class="split-header">
+                      <p class="card-title">월간 중요 증시 일정(2020.12)</p>
+                    </div>
+                    <div class="vertical-timeline-wrapper">
+                      <div class="timeline-vertical dashboard-timeline">
+                        <div class="activity-log">
+                          <p class="log-name">선물/옵션 동시 만기일</p>
+                          <div class="log-details">코스피200선물/옵션 2012, 미니코스피200선물/옵션 2012, 주식선물/옵션 2012, 섹터지수선물 2012, 배당지수선물 2012, 코스닥150선물/옵션 2012, ETF선물 2012, KRX300선물 2012 최종거래일</div>
+                          <small class="log-time">12/10</small>
+                        </div>
+                        <div class="activity-log">
+                          <p class="log-name">중국 쌍12절(双十二)</p>
+                          <div class="log-details">12월12일 중국의 광군제와 더불어 중국 최대의 쇼핑 이벤트로 불리는 쌍12절 행사가 진행될 예정.<br>관련테마: 면세점, 소매유통, 여행, 항공/저가 항공사(LCC), 화장품</div>
+                          <small class="log-time">12/12</small>
+                        </div>
+                        <div class="activity-log">
+                          <p class="log-name">美) FOMC 회의 발표(현지시간)</p>
+                          <div class="log-details">미국 공개시장위원회 회의 발표(FOMC Meeting Announcement)<br>연방준비제도(Fed)는 현지시간으로 12월15일부터 16일까지 이틀간 일정으로 통화정책 결정기구인 연방공개시장위원회(FOMC) 회의를 열고, 회의 결과는 현지시간으로 16일 오후 2시(한국시간 17일 새벽)에 발표됨.</div>
+                          <small class="log-time">12/15~16</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 equel-grid">
+                <div class="row">
+                  <div class="grid table-responsive">
+                  <table class="table table-stretched">
+                    <thead>
+                      <tr>
+                        <th>ADR
+                          <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left" title="ADR(Advance Decline Ratio)는 주식시장의 센티멘트를 측정하는 기술적 지표로 상승과 하락하는 종목의 수에 의해 계산되고 75이하일때는 과매도(바닥), 120이상일때는 과매수(과열) 국면으로 여겨진다.">
+                        <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
+                      </span></th>
+                        <th>Current</th>
+                        <th>Change</th>
+                      </tr>
+                    </thead>
+                    <tbody id = 'get_adr_current'>
+                    </tbody>
+                  </table>
+                </div>
+                  <div class="grid table-responsive">
+                    <table class="table table-stretched">
+                      <thead>
+                      <tr>
+                        <th>ADR history</th>
+                        <th>KOSPI</th>
+                        <th>KOSDAQ</th>
+                      </tr>
+                      </thead>
+                      <tbody id = 'get_adr_hist'>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- content viewport ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="row">
+            <div class="col-sm-6 text-center text-sm-right mt-3 mt-sm-0">
+              <small class="text-muted d-block">Copyright © 2020 All rights reserved</small>
+            </div>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- page content ends -->
+    </div>
+    <!--page body ends -->
+    <!-- SCRIPT LOADING START FORM HERE /////////////-->
+    <!-- plugins:js -->
+    <script src="../../resources/assets/vendors/js/core.js"></script>
+    <!-- endinject -->
+    <!-- Vendor Js For This Page Ends-->
+    <script src="../../resources/assets/vendors/apexcharts/apexcharts.min.js"></script>
+    <script src="../../resources/assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="../../resources/assets/js/charts/chartjs.addon.js"></script>
+    <!-- Vendor Js For This Page Ends-->
+    <!-- build:js -->
+    <script src="../../resources/assets/js/template.js"></script>
+    <script src="../../resources/assets/js/dashboard.js"></script>
+    <script src="../../resources/assets/js/main_output.js"></script>
+    <script src="../../resources/assets/js/charts/chartjs.js"></script>
+
+    <!-- endbuild -->
+  </body>
+</html>

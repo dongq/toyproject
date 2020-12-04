@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Data Driven Investing</title>    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
+    <!-- endinject -->
+    <!-- vendor css for this page -->
+    <!-- End vendor css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../resources/assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout style -->
+    <link rel="stylesheet" href="../../resources/assets/css/demo_1/style.css">
+    <!-- Layout style -->
+    <link rel="shortcut icon" href="../asssets/images/favicon.ico" />
+</head>
+<body class="header-fixed">
+<!-- partial:partials/_header.html -->
+<nav class="t-header">
+    <div class="t-header-brand-wrapper">
+        <a href="/">
+<!--            <img class="logo" src="../../resources/assets/images/logo.svg" alt="">-->
+            <img class="logo-mini" src="../../resources/assets/images/logo_mini.svg" alt="">
+        </a>
+    </div>
+    <div class="t-header-content-wrapper">
+        <div class="t-header-content">
+            <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
+                <i class="mdi mdi-menu"></i>
+            </button>
+<!--            <form action="#" class="t-header-search-box">-->
+<!--                <div class="input-group">-->
+<!--                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" autocomplete="off">-->
+<!--                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-arrow-right-thick"></i></button>-->
+<!--                </div>-->
+<!--            </form>-->
+            <ul class="nav ml-auto">
+<!--
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="notificationDropdown" data-toggle="dropdown" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline mdi-1x"></i>
+                    </a>
+                    <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="notificationDropdown">
+                        <div class="dropdown-header">
+                            <h6 class="dropdown-title">Notifications</h6>
+                            <p class="dropdown-title-text">You have 4 unread notification</p>
+                        </div>
+                        <div class="dropdown-body">
+                            <div class="dropdown-list">
+                                <div class="icon-wrapper rounded-circle bg-inverse-primary text-primary">
+                                    <i class="mdi mdi-alert"></i>
+                                </div>
+                                <div class="content-wrapper">
+                                    <small class="name">Storage Full</small>
+                                    <small class="content-text">Server storage almost full</small>
+                                </div>
+                            </div>
+                            <div class="dropdown-list">
+                                <div class="icon-wrapper rounded-circle bg-inverse-success text-success">
+                                    <i class="mdi mdi-cloud-upload"></i>
+                                </div>
+                                <div class="content-wrapper">
+                                    <small class="name">Upload Completed</small>
+                                    <small class="content-text">3 Files uploded successfully</small>
+                                </div>
+                            </div>
+                            <div class="dropdown-list">
+                                <div class="icon-wrapper rounded-circle bg-inverse-warning text-warning">
+                                    <i class="mdi mdi-security"></i>
+                                </div>
+                                <div class="content-wrapper">
+                                    <small class="name">Authentication Required</small>
+                                    <small class="content-text">Please verify your password to continue using cloud services</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-footer">
+                            <a href="#">View All</a>
+                        </div>
+                    </div>
+                </li>
+-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="messageDropdown" data-toggle="dropdown" aria-expanded="false">
+                        <i class="mdi mdi-message-outline mdi-1x"></i>
+                        <span class="notification-indicator notification-indicator-primary notification-indicator-ripple"></span>
+                    </a>
+                    <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="messageDropdown">
+                        <div class="dropdown-header">
+                            <h6 class="dropdown-title"><b>후원 및 기타문의</b></h6>
+                            <p class="dropdown-title-text">본 싸이트의 컨텐츠가 투자에 도움이 되신다면</p>
+                            <p class="dropdown-title-text">장기적 운영 및 신규컨텐츠 개발을 위해</p>
+                            <p class="dropdown-title-text">작은 후원을 부탁드립니다.</p>
+                        </div>
+                        <div class="dropdown-body">
+                            <div class="dropdown-list">
+                                <div class="image-wrapper">
+                                    <img class="profile-img" src="../../resources/assets/images/naver.png" alt="naver email">
+                                    <div class="status-indicator rounded-indicator bg-success"></div>
+                                </div>
+                                <div class="content-wrapper">
+                                    <small class="name">Email</small><br>
+                                    <small class="content-text">datainvesting@naver.com</small>
+                                </div>
+                            </div>
+                            <div class="dropdown-list">
+                                <div class="image-wrapper">
+                                    <img class="profile-img" src="../../resources/assets/images/kb1.jpg" alt="KB국민은행">
+                                    <div class="status-indicator rounded-indicator bg-success"></div>
+                                </div>
+                                <div class="content-wrapper">
+                                    <small class="name">KB국민은행</small><br>
+                                    <small class="content-text">계좌번호 : 394402-04-400611</small>
+                                </div>
+                            </div>
+                            <!--                            <div class="dropdown-list">
+                                                            <div class="image-wrapper">
+                                                                <img class="profile-img" src="../../resources/assets/images/profile/male/image_3.png" alt="profile image">
+                                                                <div class="status-indicator rounded-indicator bg-warning"></div>
+                                                            </div>
+                                                            <div class="content-wrapper">
+                                                                <small class="name">Lewis Guzman</small>
+                                                                <small class="content-text">Lorem ipsum dolor sit amet.</small>
+                                                            </div>
+                                                        </div>-->
+                        </div>
+                        <!--                        <div class="dropdown-footer">
+                                                    <a href="#">View All</a>
+                                                </div>-->
+                    </div>
+                </li>
+<!--
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="appsDropdown" data-toggle="dropdown" aria-expanded="false">
+                        <i class="mdi mdi-apps mdi-1x"></i>
+                    </a>
+                    <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="appsDropdown">
+                        <div class="dropdown-header">
+                            <h6 class="dropdown-title">Apps</h6>
+                            <p class="dropdown-title-text mt-2">Authentication required for 3 apps</p>
+                        </div>
+                        <div class="dropdown-body border-top pt-0">
+                            <a class="dropdown-grid">
+                                <i class="grid-icon mdi mdi-jira mdi-2x"></i>
+                                <span class="grid-tittle">Jira</span>
+                            </a>
+                            <a class="dropdown-grid">
+                                <i class="grid-icon mdi mdi-trello mdi-2x"></i>
+                                <span class="grid-tittle">Trello</span>
+                            </a>
+                            <a class="dropdown-grid">
+                                <i class="grid-icon mdi mdi-artstation mdi-2x"></i>
+                                <span class="grid-tittle">Artstation</span>
+                            </a>
+                            <a class="dropdown-grid">
+                                <i class="grid-icon mdi mdi-bitbucket mdi-2x"></i>
+                                <span class="grid-tittle">Bitbucket</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-footer">
+                            <a href="#">View All</a>
+                        </div>
+                    </div>
+                </li>
+-->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- partial -->
+<div class="page-body">
+    <!-- partial:partials/_sidebar.html -->
+    <div class="sidebar">
+
+        <ul class="navigation-menu">
+            <li class="nav-category-divider">MAIN</li>
+            <li>
+                <a href="/">
+                    <span class="link-title">Home</span>
+                    <i class="mdi mdi-gauge link-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a href="rim">
+                    <span class="link-title">RIM</span>
+                    <i class="mdi mdi-flask link-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a href="trend" >
+                    <span class="link-title">Profit Verification</span>
+                    <i class="mdi mdi-bullseye link-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a href="lowper">
+                    <span class="link-title">Low PER</span>
+                    <i class="mdi mdi-clipboard-outline link-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a href="consensus">
+                    <span class="link-title">Consensus</span>
+                    <i class="mdi mdi-chart-donut link-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a href="whobuy">
+                    <span class="link-title">Buy&Sell</span>
+                    <i class="mdi mdi-flower-tulip-outline link-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a href="faq">
+                    <span class="link-title">FAQ</span>
+                    <i class="mdi mdi-asterisk link-icon"></i>
+                </a>
+            </li>
+            <!--<li class="nav-category-divider">DOCS</li>
+            <li>
+                <a href="../docs/docs.html">
+                    <span class="link-title">Documentation</span>
+                    <i class="mdi mdi-asterisk link-icon"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-upgrade-banner">
+            <p class="text-gray">Upgrade to <b class="text-primary">PRO</b> for more exciting features</p>
+            <a class="btn upgrade-btn" target="_blank" href="http://www.uxcandy.co/product/label-pro-admin-template/">Upgrade to PRO</a>
+        </div>-->
+            <br>
+            <div class="sidebar-upgrade-banner">
+                <b class="text-primary">후원 및 기타문의</b>
+                <p class="text-gray">datainvesting@naver.com</p>
+                <p class="text-gray">KB국민은행</p>
+                <p class="text-gray">394402-04-400611</p>
+                <!--<a class="btn upgrade-btn" target="_blank" href="http://www.uxcandy.co/product/label-pro-admin-template/">Upgrade to PRO</a>-->
+            </div>
+    </div>
+    <!-- partial -->
+    <div class="page-content-wrapper">
+        <div class="page-content-wrapper-inner">
+            <div class="content-viewport">
+                <div class="row">
+                    <div class="grid">
+                        <div class="grid-body">
+                            <h2 class="grid-title">Profit Verification</h2>
+                            <div class="item-wrapper" style="font-size: 12px;">
+                                <p>RIM에서 측정한 RANKING을 기반으로 실제 매수를 했을때 현재 기준 종목별 수익율 추이를 검색해볼 수 있습니다.</p>
+                                <p>날짜를 선택하고 Submit 버튼을 누르면 결과 값을 확인할 수 있습니다.</p>
+                                <p>주식시장이 문을 열지 않는 주말이나 공휴일을 선택하면 아무 결과를 확인할 수 없습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="grid">
+                            <div class="grid-head">
+                                <label for="id_getdate">Choose Start date:</label>
+                                <p>
+                                    <input type="date" id="id_getdate" name="trip-start" value="2020-11-02" min="2020-11-02" >
+                                    <input type="submit" class="btn btn-primary" value="Submit" onclick="setDate()">
+                                </p>
+                            </div>
+                            <div class="item-wrapper">
+                                <div class="table-responsive">
+                                    <table class="table info-table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Ranking</th>
+                                            <th>종목명</th>
+                                            <th>매수가격</th>
+                                            <th>현재가격</th>
+                                            <th>수익율(%)</th>
+                                            <th>최고(%)</th>
+                                            <th>최저(%)</th>
+                                            <th>최종목표가</th>
+                                            <th>1차목표가</th>
+                                            <th>매수가</th>
+                                            <th>ROE</th>
+                                            <th>현재시총(억)</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id = 'get_trend'>
+                                        </tbody>
+                                        <!--   <tbody>
+                                           <tr>
+                                             <td>
+                                               <div class="progress progress-slim">
+                                                 <div class="progress-bar bg-info progress-bar-striped" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                               </div>
+                                             </td>
+                                             <td>$23,563</td>
+                                             <td>$30,000</td>
+                                             <td>3454</td>
+                                             <td class="text-success"> 15.67% <i class="mdi mdi-arrow-up"></i>
+                                             </td>
+                                             <td>Jul 12, 2019 </td>
+                                             <td>Jar 23, 2019 </td>
+                                             <td class="actions">
+                                               <i class="mdi mdi-dots-vertical"></i>
+                                             </td>
+                                           </tr>
+                                           <tr>
+                                             <td>
+                                               <div class="progress progress-slim">
+                                                 <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                               </div>
+                                             </td>
+                                             <td>$14,435</td>
+                                             <td>$30,000</td>
+                                             <td>3454</td>
+                                             <td class="text-danger"> 23.05% <i class="mdi mdi-arrow-down"></i>
+                                             </td>
+                                             <td>Jul 12, 2019 </td>
+                                             <td> May 15, 2019 </td>
+                                             <td class="actions">
+                                               <i class="mdi mdi-dots-vertical"></i>
+                                             </td>
+                                           </tr>
+                                           <tr>
+                                             <td>
+                                               <div class="progress progress-slim">
+                                                 <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                               </div>
+                                             </td>
+                                             <td>$16,745</td>
+                                             <td>$30,000</td>
+                                             <td>3454</td>
+                                             <td class="text-success"> 23.05% <i class="mdi mdi-arrow-up"></i>
+                                             </td>
+                                             <td>Jul 12, 2019 </td>
+                                             <td> May 15, 2019 </td>
+                                             <td class="actions">
+                                               <i class="mdi mdi-dots-vertical"></i>
+                                             </td>
+                                           </tr>
+                                           <tr>
+                                             <td>
+                                               <div class="progress progress-slim">
+                                                 <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                               </div>
+                                             </td>
+                                             <td>$34,546</td>
+                                             <td>$30,000</td>
+                                             <td>3454</td>
+                                             <td class="text-success"> 67.23% <i class="mdi mdi-arrow-up"></i>
+                                             </td>
+                                             <td>Jul 12, 2019 </td>
+                                             <td>Apr 06, 2019 </td>
+                                             <td class="actions">
+                                               <i class="mdi mdi-dots-vertical"></i>
+                                             </td>
+                                           </tr>
+                                           <tr>
+                                             <td>
+                                               <div class="progress progress-slim">
+                                                 <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                               </div>
+                                             </td>
+                                             <td>$23,657</td>
+                                             <td>$30,000</td>
+                                             <td>3454</td>
+                                             <td class="text-danger"> 12.45% <i class="mdi mdi-arrow-down"></i>
+                                             </td>
+                                             <td>Jul 12, 2019 </td>
+                                             <td>Jul 12, 2019 </td>
+                                             <td class="actions">
+                                               <i class="mdi mdi-dots-vertical"></i>
+                                             </td>
+                                           </tr>
+                                           </tbody>-->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content viewport ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+            <div class="row">
+<!--                <div class="col-sm-6 text-center text-sm-right order-sm-1">
+                    <ul class="text-gray">
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>-->
+                <div class="col-sm-6 text-center text-sm-right mt-3 mt-sm-0">
+                    <small class="text-muted d-block">Copyright © 2020 All rights reserved</small>
+<!--                    <small class="text-muted d-block">Copyright © 2019 <a href="http://www.uxcandy.co" target="_blank">UXCANDY</a>. All rights reserved</small>-->
+<!--                    <small class="text-gray mt-2">Handcrafted With <i class="mdi mdi-heart text-danger"></i></small>-->
+                </div>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- page content ends -->
+</div>
+<!--page body ends -->
+<!-- SCRIPT LOADING START FORM HERE /////////////-->
+<!-- plugins:js -->
+<script src="../../resources/assets/vendors/js/core.js"></script>
+<!-- endinject -->
+<!-- Vendor Js For This Page Ends-->
+<script src="../../resources/assets/vendors/apexcharts/apexcharts.min.js"></script>
+<script src="../../resources/assets/vendors/chartjs/Chart.min.js"></script>
+<script src="../../resources/assets/js/charts/chartjs.addon.js"></script>
+<!-- Vendor Js For This Page Ends-->
+<!-- build:js -->
+<script src="../../resources/assets/js/template.js"></script>
+<script src="../../resources/assets/js/dashboard.js"></script>
+<script src="../../resources/assets/js/trend_output.js"></script>
+<!-- endbuild -->
+</body>
+</html>
