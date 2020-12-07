@@ -3302,6 +3302,20 @@ input[type="button"].btn-block {
     .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
       color: #fff; }
 
+
+.nav-tab {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: block;
+  padding: 1px 10px;
+  color: #337ab7;
+  text-decoration: none;
+}
+
+
 .card {
   position: relative;
   display: flex;

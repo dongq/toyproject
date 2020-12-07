@@ -81,9 +81,9 @@ function proc_adr_current(result){
 function proc_adr_hist(result){
     $("#get_adr_hist").empty();
     $.each(result, function(index, item){
-        var str = '<tr><td><p class="mb-n1 font-weight-medium">' + item.cdate + '</p>';
-        str += '<td class="font-weight-medium">' + item.kospi_value + '</td>';
-        str += '<td class="font-weight-medium">' + item.kosdak_value + '</td>';
+        var str = '<tr><td><p>' + item.cdate + '</p>';
+        str += '<td>' + item.kospi_value + '</td>';
+        str += '<td>' + item.kosdak_value + '</td>';
         $('#get_adr_hist').append(str);
     });
     $('#get_adr_hist').append('</tr>');

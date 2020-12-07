@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Data Driven Investing</title>
+    <title>Data Stock</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
     <!-- endinject -->
@@ -15,7 +15,9 @@
     <!-- Layout style -->
     <link rel="stylesheet" href="../../resources/assets/css/demo_1/style.css">
     <!-- Layout style -->
-    <link rel="shortcut icon" href="../asssets/images/favicon.ico" />
+    <!--<link rel="shortcut icon" href="../resources/asssets/images/favicon.ico" />-->
+    <!--<link rel="stylesheet" href="../../resources/assets/scss/shared/chart_tab.css">-->
+
   </head>
   <body class="header-fixed">
     <!-- partial:partials/_header.html -->
@@ -122,7 +124,7 @@
           </li>
 
           <br>
-          <div class="sidebar-upgrade-banner2">
+          <div class="sidebar-upgrade-banner">
             <p class="text-primary"><b>후원 및 기타문의</b></p>
             <p class="text-gray">datainvesting@naver.com</p>
             <p class="text-gray">KB국민은행</p>
@@ -136,8 +138,8 @@
           <div class="content-viewport">
             <div class="row">
               <div class="col-12 py-5">
-                <h4>Data Driven Investing</h4>
-                <p class="text-gray">우리는 강에 떠있으면 바다로 간다.</p>
+                <h4>Data Stock</h4>
+                <p class="text-gray">데이터 그 이상의 데이터를 추구합니다.</p>
               </div>
             </div>
             <div class="row">
@@ -211,27 +213,27 @@
                   </div>
                     <div>
                       <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#bar_1w" aria-controls="home" role="tab" data-toggle="tab"> Week |</a></li>
-                        <li role="presentation" ><a href="#bar_1m" aria-controls="profile" role="tab" data-toggle="tab"> 1M | </a></li>
-                        <li role="presentation" ><a href="#bar_3m" aria-controls="profile" role="tab" data-toggle="tab"> 3M | </a></li>
-                        <li role="presentation" ><a href="#bar_6m" aria-controls="profile" role="tab" data-toggle="tab"> 6M | </a></li>
-                        <li role="presentation" ><a href="#bar_1y" aria-controls="profile" role="tab" data-toggle="tab"> 1Y | </a></li>
-                        <li role="presentation" ><a href="#bar_2y" aria-controls="profile" role="tab" data-toggle="tab"> 2Y | </a></li>
-                        <li role="presentation" ><a href="#bar_3y" aria-controls="profile" role="tab" data-toggle="tab"> 3Y | </a></li>
-                        <li role="presentation" ><a href="#bar_5y" aria-controls="profile" role="tab" data-toggle="tab"> 5Y </a></li>
+                        <li role="presentation" class="active"><a href="#bar_1w" aria-controls="home" role="tab" data-toggle="tab" class="nav-tab">1W</a></li>
+                        <li role="presentation" ><a href="#bar_1m" aria-controls="profile" role="tab" data-toggle="tab" class="nav-tab">1M</a></li>
+                        <li role="presentation" ><a href="#bar_3m" aria-controls="profile" role="tab" data-toggle="tab" class="nav-tab">3M</a></li>
+                        <li role="presentation" ><a href="#bar_6m" aria-controls="profile" role="tab" data-toggle="tab" class="nav-tab">6M</a></li>
+                        <li role="presentation" ><a href="#bar_1y" aria-controls="profile" role="tab" data-toggle="tab" class="nav-tab">1Y</a></li>
+                        <li role="presentation" ><a href="#bar_2y" aria-controls="profile" role="tab" data-toggle="tab" class="nav-tab">2Y</a></li>
+                        <li role="presentation" ><a href="#bar_3y" aria-controls="profile" role="tab" data-toggle="tab" class="nav-tab">3Y</a></li>
+                        <li role="presentation" ><a href="#bar_5y" aria-controls="profile" role="tab" data-toggle="tab" class="nav-tab">5Y</a></li>
                       </ul>
                       <div class="tab-content">
-                        <div class="col-md-6 tab-pane active" id="bar_1w">
+                        <div class="col-md-8 tab-pane active" id="bar_1w">
                           <div class="grid">
                             <div class="grid-body">
                               <h2 class="grid-title">1 Week</h2>
                               <div class="item-wrapper">
-                                <canvas id="chartjs-bar-chart_1w" width="600" height="400"></canvas>
+                                <canvas id="chartjs-bar-chart_1w" width="1200" height="400"></canvas>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 tab-pane" id="bar_1m">
+                        <div class="col-md-8 tab-pane" id="bar_1m">
                           <div class="grid">
                             <div class="grid-body">
                               <h2 class="grid-title">1 Month</h2>
@@ -241,7 +243,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 tab-pane" id="bar_3m">
+                        <div class="col-md-8 tab-pane" id="bar_3m">
                           <div class="grid">
                             <div class="grid-body">
                               <h2 class="grid-title">3 Month</h2>
@@ -251,7 +253,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 tab-pane" id="bar_6m">
+                        <div class="col-md-8 tab-pane" id="bar_6m">
                           <div class="grid">
                             <div class="grid-body">
                               <h2 class="grid-title">6 Month</h2>
@@ -261,7 +263,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 tab-pane" id="bar_1y">
+                        <div class="col-md-8 tab-pane" id="bar_1y">
                           <div class="grid">
                             <div class="grid-body">
                               <h2 class="grid-title">1 Year</h2>
@@ -271,7 +273,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 tab-pane" id="bar_2y">
+                        <div class="col-md-8 tab-pane" id="bar_2y">
                           <div class="grid">
                             <div class="grid-body">
                               <h2 class="grid-title">2 Year</h2>
@@ -281,7 +283,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 tab-pane" id="bar_3y">
+                        <div class="col-md-8 tab-pane" id="bar_3y">
                           <div class="grid">
                             <div class="grid-body">
                               <h2 class="grid-title">3 Year</h2>
@@ -291,7 +293,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 tab-pane" id="bar_5y">
+                        <div class="col-md-8 tab-pane" id="bar_5y">
                           <div class="grid">
                             <div class="grid-body">
                               <h2 class="grid-title">5 Year</h2>
@@ -301,15 +303,11 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                    </div>
                     </div>
                 </div>
               </div>
-
-
-
-
-                  <div class="col-lg-8">
+              <div class="col-lg-8">
                     <div class="grid">
                       <div class="grid-body">
                         <div class="split-header">
@@ -322,7 +320,7 @@
                       </div>
                       <div class="item-wrapper">
                         <div class="table-responsive">
-                          <table class="table info-table table-striped">
+                          <table class="table info-table table-bordered">
                             <thead>
                             <tr>
                               <th>Date</th>
@@ -339,7 +337,6 @@
                       </div>
                     </div>
                   </div>
-
               <div class="col-lg-4">
                 <div class="grid">
                   <div class="grid-body">
@@ -368,10 +365,6 @@
                   </div>
                 </div>
               </div>
-
-
-
-
               <div class="col-md-8 equel-grid">
                 <div class="grid">
                   <div class="grid-body">
@@ -441,8 +434,8 @@
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="row">
-            <div class="col-sm-6 text-center text-sm-right mt-3 mt-sm-0">
-              <small class="text-muted d-block">Copyright © 2020 All rights reserved</small>
+            <div class="col-sm-12 text-center text-sm-right mt-3 mt-sm-0">
+              <small class="text-muted d-block">모든 투자에 대한 책임은 투자자 본인에게 있으며 본 페이지의 정보는 투자에 참고만 하시기 바랍니다. Copyright © 2020 All rights reserved</small>
             </div>
           </div>
         </footer>

@@ -24,7 +24,6 @@ $(function () {
                 data2.unshift(obj.신용잔고);
             });
             createChart_credit();
-            createChart_cmoney();
         }
     });
 
@@ -83,38 +82,4 @@ $(function () {
         new Chart(ctx, options);
     }
 
-    function createChart_cmoney(){
-        //if ($("#chartjs-staked-line-chart").length) {
-        var options = {
-            type: 'line',
-            data: {
-                labels: label1,
-                datasets: [
-                    {
-                        label: '고객예탁금',
-                        data: data1,
-                        borderWidth: 2,
-                        fill: false,
-                        backgroundColor: chartColors[0],
-                        borderColor: chartColors[0],
-                        borderWidth: 0
-                    }
-                ]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            reverse: false
-                        }
-                    }]
-                },
-                fill: false,
-                legend: false
-            }
-        }
-
-        var ctx = document.getElementById('chartjs-line-chart-cmoney').getContext('2d');
-        new Chart(ctx, options);
-    }
 });
