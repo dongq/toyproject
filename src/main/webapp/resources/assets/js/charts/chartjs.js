@@ -12,7 +12,6 @@ $(function () {
   var data_3y = [];
   var data_5y = [];
 
-
   $.ajax({
     type: 'GET',
     url: url1,
@@ -117,6 +116,7 @@ $(function () {
       });
     }
   });
+
 
   function createChart_1w(){
   //if ($("#chartjs-bar-chart_1w").length) {

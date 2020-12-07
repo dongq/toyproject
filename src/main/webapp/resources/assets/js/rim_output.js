@@ -7,7 +7,6 @@ function proc_q1(result){
         str += '<td>' + item.current + '</td>';
         str += '<td>' + item.pbr + '</td>';
         str += '<td>' + item.per + '</td>';
-        str += '<td>' + item.psr + '</td>';
         str += '<td>' + item.high + '</td>';
         str += '<td>' + item.mid + '</td>';
         str += '<td>' + item.low + '</td>';

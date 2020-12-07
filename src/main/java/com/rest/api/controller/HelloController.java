@@ -31,8 +31,12 @@ public class HelloController {
         return "whobuy";
     }
     @GetMapping(value = "/faq")
-    public String hello_contact(){
+    public String hello_faq(){
         return "faq";
+    }
+    @GetMapping(value = "/credit")
+    public String hello_credit(){
+        return "credit";
     }
 
 

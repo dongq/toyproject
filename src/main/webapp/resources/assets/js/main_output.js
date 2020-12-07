@@ -89,6 +89,39 @@ function proc_adr_hist(result){
     $('#get_adr_hist').append('</tr>');
 }
 
+function proc_credit(result){
+    $("#get_credit").empty();
+    $.each(result, function(index, item){
+        var str = '<tr><td>' + item.cdate + '</td>';
+        str += '<td>' + item.고객예탁금 + '</td>';
+        if ( item.고객예탁금_증감 >= 0 ) {
+            str += '<td class="text-success">' + item.고객예탁금_증감 + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
+        } else {
+            str += '<td class="text-danger">' + item.고객예탁금_증감 + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
+        }
+        str += '<td>' + item.신용잔고 + '</td>';
+        if ( item.신용잔고_증감 >= 0 ) {
+            str += '<td class="text-success">' + item.신용잔고_증감 + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
+        } else {
+            str += '<td class="text-danger">' + item.신용잔고_증감 + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
+        }
+        $('#get_credit').append(str);
+    });
+    $('#get_credit').append('</tr>');
+}
+
+function proc_market(result){
+    $("#get_market").empty();
+    $.each(result, function(index, item){
+        var str = '<tr><td>' + item.market + '</td>';
+        str += '<td>' + item.per + '</td>';
+        str += '<td>' + item.pbr + '</td>';
+        $('#get_market').append(str);
+    });
+    $('#get_market').append('</tr>');
+}
+
+
 function func_jisu(){
     var get = 'GET METHOD CALL';
     var url1 = '/v1/qjisu'
@@ -145,8 +178,50 @@ function func_adr_hist(){
     });
 }
 
+function func_credit(){
+    var get = 'GET METHOD CALL';
+    var url1 = '/v1/qcredit5'
+
+    $.ajax({
+        type: 'GET',
+        url: url1,
+        dataType: 'json',
+        data: {data:get},
+        success: function(result) {
+            if (result) {
+                console.log(result);
+                $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
+                proc_credit(result.list);
+            }
+        }
+    });
+}
+
+
+function func_market(){
+    var get = 'GET METHOD CALL';
+    var url1 = '/v1/q8'
+
+    $.ajax({
+        type: 'GET',
+        url: url1,
+        dataType: 'json',
+        data: {data:get},
+        success: function(result) {
+            if (result) {
+                console.log(result);
+                $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
+                proc_market(result.list);
+            }
+        }
+    });
+}
+
+
 $(document).ready(function(){
     func_jisu();
     func_adr_current();
     func_adr_hist();
+    func_credit();
+    func_market();
 });

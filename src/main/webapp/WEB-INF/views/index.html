@@ -201,9 +201,14 @@
                   </div>
                 </div>
               </div>
+
               <div class="col-lg-12">
                 <div class="grid">
-                    <p class="grid-header">각 지수별 Performance(%)</p>
+                  <div class="grid-body">
+                    <div class="split-header">
+                      <p class="card-title"><b>각 지수별 Performance(%)</b></p>
+                    </div>
+                  </div>
                     <div>
                       <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#bar_1w" aria-controls="home" role="tab" data-toggle="tab"> Week |</a></li>
@@ -304,11 +309,74 @@
 
 
 
+                  <div class="col-lg-8">
+                    <div class="grid">
+                      <div class="grid-body">
+                        <div class="split-header">
+                          <p class="card-title"><b>신용 및 예탁금 추이(단위 : 억원)</b>
+                            <a href="credit">
+                            <span class="link-title">credit chart</span>
+                            <i class="mdi link-icon"></i>
+                            </a></p>
+                        </div>
+                      </div>
+                      <div class="item-wrapper">
+                        <div class="table-responsive">
+                          <table class="table info-table table-striped">
+                            <thead>
+                            <tr>
+                              <th>Date</th>
+                              <th>예탁금</th>
+                              <th>예탁금_증감</th>
+                              <th>신용</th>
+                              <th>신용_증감</th>
+                            </tr>
+                            </thead>
+                            <tbody id = 'get_credit'>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              <div class="col-lg-4">
+                <div class="grid">
+                  <div class="grid-body">
+                    <div class="split-header">
+                      <p class="card-title "><b>시장별 PER, PBR</b></p>
+                    </div>
+                    <div class="item-wrapper" style="font-size: 12px;">
+                      <p class="text-gray">PER : 시총합계 / 최근 4분기 지배주주순익 합산</p>
+                      <p class="text-gray">PBR : 시총합계 / 최근 1분기 지배주주지분 합산</p>
+                    </div>
+                  </div>
+                  <div class="item-wrapper">
+                    <div class="table-responsive">
+                      <table class="table info-table table-bordered">
+                        <thead>
+                        <tr>
+                          <th>Market</th>
+                          <th>PER</th>
+                          <th>PBR</th>
+                        </tr>
+                        </thead>
+                        <tbody id = 'get_market'>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
               <div class="col-md-8 equel-grid">
                 <div class="grid">
                   <div class="grid-body">
                     <div class="split-header">
-                      <p class="card-title">월간 중요 증시 일정(2020.12)</p>
+                      <p class="card-title"><b>월간 중요 증시 일정(2020.12)</b></p>
                     </div>
                     <div class="vertical-timeline-wrapper">
                       <div class="timeline-vertical dashboard-timeline">
