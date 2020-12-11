@@ -93,17 +93,17 @@ function proc_credit(result){
     $("#get_credit").empty();
     $.each(result, function(index, item){
         var str = '<tr><td>' + item.cdate + '</td>';
-        str += '<td>' + item.고객예탁금 + '</td>';
+        str += '<td>' + item.고객예탁금.toLocaleString('en') + '</td>';
         if ( item.고객예탁금_증감 >= 0 ) {
-            str += '<td class="text-success">' + item.고객예탁금_증감 + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
+            str += '<td class="text-success">' + item.고객예탁금_증감.toLocaleString('en') + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
         } else {
-            str += '<td class="text-danger">' + item.고객예탁금_증감 + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
+            str += '<td class="text-danger">' + item.고객예탁금_증감.toLocaleString('en') + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
         }
-        str += '<td>' + item.신용잔고 + '</td>';
+        str += '<td>' + item.신용잔고.toLocaleString('en') + '</td>';
         if ( item.신용잔고_증감 >= 0 ) {
-            str += '<td class="text-success">' + item.신용잔고_증감 + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
+            str += '<td class="text-success">' + item.신용잔고_증감.toLocaleString('en') + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
         } else {
-            str += '<td class="text-danger">' + item.신용잔고_증감 + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
+            str += '<td class="text-danger">' + item.신용잔고_증감.toLocaleString('en') + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
         }
         $('#get_credit').append(str);
     });

@@ -5,11 +5,11 @@ function proc_q2(result){
         var str = '<tr><td>' + item.ranking + '</td>';
         str += '<td>' + item.code + '</td>';
         str += '<td>' + item.name + '</td>';
-        str += '<td>' + item.expected + '</td>';
-        str += '<td>' + item.totalvalue + '</td>';
-        str += '<td>' + item.e_PER + '</td>';
+        str += '<td>' + item.expected.toLocaleString('en') + '</td>';
+        str += '<td>' + item.totalvalue.toLocaleString('en') + '</td>';
+        str += '<td>' + item.e_PER.toLocaleString('en') + '</td>';
         str += '<td>' + item.class_small + '</td>';
-        str += '<td>' + item.avg_per + '</td>';
+        str += '<td>' + item.avg_per.toLocaleString('en') + '</td>';
         $('#get_q2').append(str);
     });
     $('#get_q2').append('</tr>');

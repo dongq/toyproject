@@ -38,7 +38,10 @@ public class HelloController {
     public String hello_credit(){
         return "credit";
     }
-
+    @GetMapping(value = "/test")
+    public String hello_test(){
+        return "test";
+    }
 
 
 

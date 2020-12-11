@@ -5,14 +5,14 @@ function proc_q6(result){
     $.each(result, function(index, item){
         var str = '<tr>';
         str += '<td>' + item.name + '</td>';
-        str += '<td>' + item.prev_revenue + '</td>';
-        str += '<td>' + item.prev_op + '</td>';
-        str += '<td>' + item.prev_net + '</td>';
-        str += '<td>' + item.prev_per + '</td>';
-        str += '<td>' + item.revenue + '</td>';
-        str += '<td>' + item.opmargin + '</td>';
-        str += '<td>' + item.netmargin + '</td>';
-        str += '<td>' + item.per + '</td>';
+        str += '<td>' + item.prev_revenue.toLocaleString('en') + '</td>';
+        str += '<td>' + item.prev_op.toLocaleString('en') + '</td>';
+        str += '<td>' + item.prev_net.toLocaleString('en') + '</td>';
+        str += '<td>' + item.prev_per.toLocaleString('en') + '</td>';
+        str += '<td>' + item.revenue.toLocaleString('en') + '</td>';
+        str += '<td>' + item.opmargin.toLocaleString('en') + '</td>';
+        str += '<td>' + item.netmargin.toLocaleString('en') + '</td>';
+        str += '<td>' + item.per.toLocaleString('en') + '</td>';
         $('#get_q6').append(str);
     });
     $('#get_q6').append('</tr>');
@@ -23,14 +23,14 @@ function proc_q7(result){
     $.each(result, function(index, item){
         var str = '<tr>';
         str += '<td>' + item.name + '</td>';
-        str += '<td>' + item.prev_revenue + '</td>';
-        str += '<td>' + item.prev_op + '</td>';
-        str += '<td>' + item.prev_net + '</td>';
-        str += '<td>' + item.prev_per + '</td>';
-        str += '<td>' + item.revenue + '</td>';
-        str += '<td>' + item.opmargin + '</td>';
-        str += '<td>' + item.netmargin + '</td>';
-        str += '<td>' + item.per + '</td>';
+        str += '<td>' + item.prev_revenue.toLocaleString('en') + '</td>';
+        str += '<td>' + item.prev_op.toLocaleString('en') + '</td>';
+        str += '<td>' + item.prev_net.toLocaleString('en') + '</td>';
+        str += '<td>' + item.prev_per.toLocaleString('en') + '</td>';
+        str += '<td>' + item.revenue.toLocaleString('en') + '</td>';
+        str += '<td>' + item.opmargin.toLocaleString('en') + '</td>';
+        str += '<td>' + item.netmargin.toLocaleString('en') + '</td>';
+        str += '<td>' + item.per.toLocaleString('en') + '</td>';
         $('#get_q7').append(str);
     });
     $('#get_q7').append('</tr>');

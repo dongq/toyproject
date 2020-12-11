@@ -23,10 +23,7 @@ public class TableQ4 {
     @Column(nullable = false, precision = 17, scale = 2)
     private BigDecimal changes;
 
-    private int changed_money;
-    private double num_gikwan;
-    private double num_foreign;
-    private double d2;
-    private double d1;
+    private double sum_gikwan;
+    private double sum_foreign;
 }
 

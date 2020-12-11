@@ -9,6 +9,10 @@ import java.math.BigDecimal;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@NamedStoredProcedureQuery(name = "TableQ3.get_whobuy",
+        procedureName = "GET_WHOBUY", parameters = {
+        @StoredProcedureParameter(mode = ParameterMode.IN, name = "date_in", type = String.class),
+        @StoredProcedureParameter(mode = ParameterMode.IN, name = "gubun_in", type = String.class)})
 @Table(name = "TableQ3")
 public class TableQ3 {
     @Id
@@ -22,11 +26,7 @@ public class TableQ3 {
 
     @Column(nullable = false, precision = 17, scale = 2)
     private BigDecimal changes;
-
-    private int changed_money;
-    private double num_gikwan;
-    private double num_foreign;
-    private double d2;
-    private double d1;
+    private double sum_gikwan;
+    private double sum_foreign;
 }
 

@@ -3,28 +3,28 @@ function proc_trend(result){
     $.each(result, function(index, item){
         var str = '<tr><td>' + item.ranking + '</td>';
         str += '<td>' + item.name + '</td>';
-        str += '<td>' + item.start_price + '</td>';
-        str += '<td>' + item.end_price + '</td>';
+        str += '<td>' + item.start_price.toLocaleString('en') + '</td>';
+        str += '<td>' + item.end_price.toLocaleString('en') + '</td>';
 
 
         if ( item.start_price < item.end_price ) {
             // 상승
-            str += '<td class="text-success">' + item.gain_rate + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
+            str += '<td class="text-success">' + item.gain_rate.toLocaleString('en') + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
         } else if (item.start_price > item.end_price){
             // 보합 or 하락
-            str += '<td class="text-danger">' + item.gain_rate + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
+            str += '<td class="text-danger">' + item.gain_rate.toLocaleString('en') + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
         } else {
-            str += '<td>' + item.gain_rate + '</td>';
+            str += '<td>' + item.gain_rate.toLocaleString('en') + '</td>';
         }
 
 
-        str += '<td>' + item.max_gain + '</td>';
-        str += '<td>' + item.min_gain + '</td>';
-        str += '<td>' + item.high + '</td>';
-        str += '<td>' + item.mid + '</td>';
-        str += '<td>' + item.low + '</td>';
-        str += '<td>' + item.roe + '</td>';
-        str += '<td>' + item.total + '</td>';
+        str += '<td>' + item.max_gain.toLocaleString('en') + '</td>';
+        str += '<td>' + item.min_gain.toLocaleString('en') + '</td>';
+        str += '<td>' + item.high.toLocaleString('en') + '</td>';
+        str += '<td>' + item.mid.toLocaleString('en') + '</td>';
+        str += '<td>' + item.low.toLocaleString('en') + '</td>';
+        str += '<td>' + item.roe.toLocaleString('en') + '</td>';
+        str += '<td>' + item.total.toLocaleString('en') + '</td>';
         $('#get_trend').append(str);
     });
     $('#get_trend').append('</tr>');
