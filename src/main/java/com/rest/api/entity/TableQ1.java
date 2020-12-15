@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "TableQ1")
+@Table(name = "tableq1")
 public class TableQ1 {
     @Id
     private int ranking;

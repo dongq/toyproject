@@ -9,9 +9,9 @@ import java.math.BigDecimal;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedStoredProcedureQuery(name = "TableQAdr.get_Adr_current",procedureName = "GET_ADR_CURRENT")
-@NamedStoredProcedureQuery(name = "TableQAdr.get_Adr_hist",procedureName = "GET_ADR_HIST")
-@Table(name = "TableQAdr")
+@NamedStoredProcedureQuery(name = "tableqadr.get_Adr_current",procedureName = "GET_ADR_CURRENT")
+@NamedStoredProcedureQuery(name = "tableqadr.get_Adr_hist",procedureName = "GET_ADR_HIST")
+@Table(name = "tableqadr")
 public class TableQAdr {
     @Id
     private int id;

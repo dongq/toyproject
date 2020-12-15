@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "TableQ8")
+@Table(name = "tableq8")
 public class TableQ8 {
     @Id
     @Column(nullable = false, length = 6)

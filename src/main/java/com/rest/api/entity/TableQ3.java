@@ -9,11 +9,11 @@ import java.math.BigDecimal;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedStoredProcedureQuery(name = "TableQ3.get_whobuy",
+@NamedStoredProcedureQuery(name = "tableq3.get_whobuy",
         procedureName = "GET_WHOBUY", parameters = {
         @StoredProcedureParameter(mode = ParameterMode.IN, name = "date_in", type = String.class),
         @StoredProcedureParameter(mode = ParameterMode.IN, name = "gubun_in", type = String.class)})
-@Table(name = "TableQ3")
+@Table(name = "tableq3")
 public class TableQ3 {
     @Id
     private int ranking;

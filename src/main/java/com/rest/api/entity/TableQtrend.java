@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedStoredProcedureQuery(name = "TableQtrend.get_Trend",
+@NamedStoredProcedureQuery(name = "tableqtrend.get_Trend",
         procedureName = "GET_TREND", parameters = {
         @StoredProcedureParameter(mode = ParameterMode.IN, name = "date_in", type = String.class)})
-@Table(name = "TableQtrend")
+@Table(name = "tableqtrend")
 public class TableQtrend {
     @Id
     private int ranking;

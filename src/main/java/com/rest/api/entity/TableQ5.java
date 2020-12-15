@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "TableQ5")
+@Table(name = "tableq5")
 public class TableQ5 {
     @Id
     private int ranking;
