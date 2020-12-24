@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Beyond Data</title>
+    <title>Beyond Stock</title>
     <link rel="stylesheet" href="../../resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
     <!-- endinject -->
     <!-- vendor css for this page -->
@@ -251,7 +251,7 @@
                             <div class="item-wrapper" style="font-size: 12px;">
                                 <p>RIM Page에서 측정한 RANKING을 기반으로 실제 특정일에 매수를 했을 때 현재 기준으로 종목별 수익률 추이를 검색해 볼 수 있습니다.</p>
                                 <p>매수일 이후 주가가 상승 및 하락을 반복할 텐데 해당 구간의 최대 수익/손실에 대해서도 확인할 수 있습니다.</p>
-                                <p>사용법은 날짜를 선택하고 Submit 버튼을 누르면 수익률을 확인할 수 있고 주식시장이 문을 열지 않는 주말이나 공휴일을 선택하면 아무런 결과도 확인할 수 없습니다.</p>
+                                <p>모든 계산은 해당일 종가(Close) 기준으로 계산됩니다.</p>
                             </div>
                         </div>
                     </div>
@@ -262,7 +262,7 @@
                             <div class="grid-head">
                                 <label for="id_getdate"><b>Choose Start date:</b></label>
                                 <p>
-                                    <input type="date" id="id_getdate" name="trip-start" value="2020-11-02" min="2020-11-02" >
+                                    <input type="date" id="id_getdate" name="trip-start" min="2020-11-02" >
                                     <input type="submit" style="height: 30px;" class="btn btn-success btn-rounded" value="Submit" onclick="setDate()">
                                 </p>
                             </div>

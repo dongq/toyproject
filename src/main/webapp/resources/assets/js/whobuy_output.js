@@ -164,7 +164,23 @@ function setDate() {
 
 
 $(document).ready(function(){
-    func_q3('20201202', 'gikwan');
-    func_q4('20201202', 'foreign');
-    func_q5('20201202', 'all');
+    var date = new Date();
+    date.setDate(date.getDate() - 7);
+
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;
+    $("#id_getdate").attr("value", today);
+
+    var dt = today.replace(/-/g, '');
+    func_q3(dt, 'gikwan');
+    func_q4(dt, 'foreign');
+    func_q5(dt, 'all');
+
+
 });

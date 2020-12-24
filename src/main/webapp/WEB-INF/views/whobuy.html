@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Beyond Data</title>
+    <title>Beyond Stock</title>
     <link rel="stylesheet" href="../../resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
     <!-- endinject -->
     <!-- vendor css for this page -->
@@ -131,9 +131,10 @@
     <!-- partial -->
     <div class="page-content-wrapper">
         <div>
+            <p>*아래 나타나는 모든 금액(억)은 종가(Close) 기준으로 종가 x 거래량으로 계산됩니다.</p>
             <label for="id_getdate"><b>Choose Start date:</b></label>
             <p>
-                <input type="date" id="id_getdate" name="trip-start" value="2020-12-02" min="2020-12-02" >
+                <input type="date" id="id_getdate" name="trip-start"  min="2020-12-02" >
                 <input type="submit" style="height: 30px;" class="btn btn-success btn-rounded" value="Submit" onclick="setDate()">
             </p>
         </div>
@@ -141,7 +142,7 @@
             <div class="col-lg-4">
                 <div class="grid">
                     <div class="grid-header">
-                        <h6>기관 매수 상위 30종목(단위 : 억원)</h6>
+                        <h6>기관 매수 상위 30종목<span class="grid-title">(단위 : 억원)</span></h6>
                     </div>
                     <div class="item-wrapper">
                         <div class="table-responsive">
@@ -149,7 +150,7 @@
                                 <thead>
                                 <tr>
                                     <th>종목명</th>
-                                    <th>시가</th>
+                                    <th>전일종가</th>
                                     <th>종가</th>
                                     <th>변동(%)</th>
                                     <th>기관</th>
@@ -166,7 +167,7 @@
             <div class="col-lg-4">
                 <div class="grid">
                     <div class="grid-header">
-                        <h6>외국인 매수 상위 30종목(단위 : 억원)</h6>
+                        <h6>외국인 매수 상위 30종목<span class="grid-title">(단위 : 억원)</span></h6>
                     </div>
                     <div class="item-wrapper">
                         <div class="table-responsive">
@@ -174,7 +175,7 @@
                                 <thead>
                                 <tr>
                                     <th>종목명</th>
-                                    <th>시가</th>
+                                    <th>전일종가</th>
                                     <th>종가</th>
                                     <th>변동(%)</th>
                                     <th>기관</th>
@@ -191,7 +192,7 @@
             <div class="col-lg-4">
                 <div class="grid">
                     <div class="grid-header">
-                        <h6>기관+외국인 매수 상위 30종목(단위 : 억원)</h6>
+                        <h6>기관+외국인 매수 상위 30종목<span class="grid-title">(단위 : 억원)</span></h6>
                     </div>
                     <div class="item-wrapper">
                         <div class="table-responsive">
@@ -199,7 +200,7 @@
                                 <thead>
                                 <tr>
                                     <th>종목명</th>
-                                    <th>시가</th>
+                                    <th>전일종가</th>
                                     <th>종가</th>
                                     <th>변동(%)</th>
                                     <th>기관</th>

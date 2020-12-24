@@ -79,6 +79,20 @@ function setDate() {
 }
 
 $(document).ready(function(){
-    func_trend('20201102');
+    var date = new Date();
+    date.setDate(date.getDate() - 30);
+
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;
+    $("#id_getdate").attr("value", today);
+
+    var dt = today.replace(/-/g, '');
+    func_trend(dt);
 });
 
