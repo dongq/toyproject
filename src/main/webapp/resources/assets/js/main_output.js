@@ -66,7 +66,7 @@ function proc_adr_current(result){
         else
             str += '<td class="text-danger font-weight-medium"><div class="badge badge-danger">' + item.kospi_updown + '</div></td></td></tr>';
 
-        str += '<tr><td><p class="mb-n1 font-weight-medium">KOSDAK</p>';
+        str += '<tr><td><p class="mb-n1 font-weight-medium">KOSDAQ</p>';
         str += '<small class="text-gray">' + item.cdate + ' ' + item.ctime + '</small></td>';
         str += '<td class="font-weight-medium">' + item.kosdak_value + '</td>';
         if (item.kosdak_updown >= 0)
