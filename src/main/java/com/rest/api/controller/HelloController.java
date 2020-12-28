@@ -42,6 +42,10 @@ public class HelloController {
     public String hello_test(){
         return "test";
     }
+    @GetMapping(value = "/persector")
+    public String hello_persector(){
+        return "persector";
+    }
 
 
 

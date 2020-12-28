@@ -19,7 +19,7 @@ public class TableQ1 {
     private String name;
     private int current;
     @Column(nullable = false, length = 20)
-    private String class_small;
+    private String classsmall;
     @Column(nullable = false, precision = 38, scale = 2)
     private BigDecimal PBR;
     @Column(nullable = false, precision = 38, scale = 2)
