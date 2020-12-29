@@ -137,20 +137,51 @@
     </div>
     <!-- partial -->
     <div class="page-content-wrapper">
-        <div>
-            <p>*아래 나타나는 모든 금액(억)은 종가(Close) 기준으로 종가 x 거래량으로 계산됩니다.</p>
-            <label for="id_getdate"><b>Choose Start date:</b></label>
-            <p>
-                <input type="date" id="id_getdate" name="trip-start"  min="2020-12-02" >
-                <input type="submit" style="height: 30px;" class="btn btn-success btn-rounded" value="Submit" onclick="setDate()">
-            </p>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="grid">
-                    <div class="grid-header">
-                        <h6>기관 매수 상위 30종목<span class="grid-title">(단위 : 억원)</span></h6>
+        <div class="page-content-wrapper-inner">
+            <div class="content-viewport">
+                <div class="row">
+                    <div class="col-lg-12">
+                    <div class="grid">
+                        <div class="grid-body">
+                            <h2 class="grid-title">일자별 매매주체 분석</h2>
+                            <div class="item-wrapper" style="font-size: 12px;">
+                                <p>매매주체를 선택하고 날짜를 선택 이후에 SUBMIT 버튼을 누르면 해당 날짜 이후 매수 합산 기준 상위 30종목이 조회됩니다.</p>
+                                <p>아래 나타나는 모든 금액(억)은 종가(Close) 기준으로 종가 x 거래량으로 계산됩니다.</p>
+                            </div>
+                        </div>
                     </div>
+                    </div>
+                    </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="grid">
+                        <div class="grid-body">
+                            <div class="item-wrapper">
+                                <div class="demo-wrapper">
+                                    <div class="btn-group mb-0" data-toggle="buttons">
+                                        <label class="btn btn-outline-info active">
+                                            <input type="radio" name="chk_info" value="all" checked>기관+외국인
+                                        </label>
+                                        <label class="btn btn-outline-info">
+                                            <input type="radio" name="chk_info" value="gikwan">기관
+                                        </label>
+                                        <label class="btn btn-outline-info">
+                                            <input type="radio" name="chk_info" value="foreign">외국인
+                                        </label>
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="id_getdate"><b>Choose Start date:</b></label>
+                                <p>
+                                    <input type="date" id="id_getdate" name="trip-start"  min="2020-12-02" >
+                                    <input type="submit" style="height: 30px;" class="btn btn-success btn-rounded" value="Submit" onclick="setDate()">
+                                </p>
+
+                            </div>
+                        </div>
+
+
                     <div class="item-wrapper">
                         <div class="table-responsive">
                             <table class="table info-table table-striped">
@@ -171,71 +202,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="grid">
-                    <div class="grid-header">
-                        <h6>외국인 매수 상위 30종목<span class="grid-title">(단위 : 억원)</span></h6>
-                    </div>
-                    <div class="item-wrapper">
-                        <div class="table-responsive">
-                            <table class="table info-table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>종목명</th>
-                                    <th>전일종가</th>
-                                    <th>종가</th>
-                                    <th>변동(%)</th>
-                                    <th>기관</th>
-                                    <th>외국인</th>
-                                </tr>
-                                </thead>
-                                <tbody id = 'get_q4'>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="grid">
-                    <div class="grid-header">
-                        <h6>기관+외국인 매수 상위 30종목<span class="grid-title">(단위 : 억원)</span></h6>
-                    </div>
-                    <div class="item-wrapper">
-                        <div class="table-responsive">
-                            <table class="table info-table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>종목명</th>
-                                    <th>전일종가</th>
-                                    <th>종가</th>
-                                    <th>변동(%)</th>
-                                    <th>기관</th>
-                                    <th>외국인</th>
-                                </tr>
-                                </thead>
-                                <tbody id = 'get_q5'>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+        </div>
             </div>
         </div>
-        <!-- content viewport ends -->
-        <!-- partial:partials/_footer.html -->
         <footer class="footer">
             <div class="row">
-<!--                <div class="col-sm-6 text-center text-sm-right order-sm-1">
-                    <ul class="text-gray">
-                        <li><a href="#">Terms of use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>-->
                 <div class="col-sm-12 text-center text-sm-right mt-3 mt-sm-0">
                     <small class="text-muted d-block">모든 투자에 대한 책임은 투자자 본인에게 있으며 본 페이지의 정보는 투자에 참고만 하시기 바랍니다. Copyright © 2020 All rights reserved</small>
-                    <!--<small class="text-muted d-block">Copyright © 2019 <a href="http://www.uxcandy.co" target="_blank">UXCANDY</a>. All rights reserved</small>-->
-                    <!--<small class="text-gray mt-2">Handcrafted With <i class="mdi mdi-heart text-danger"></i></small>-->
                 </div>
             </div>
         </footer>

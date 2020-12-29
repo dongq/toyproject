@@ -1,5 +1,5 @@
 
-function proc_q3(result){
+function proc_whobuy(result){
     $("#get_q3").empty();
     $.each(result, function(index, item){
         var str = '<tr>';
@@ -26,58 +26,7 @@ function proc_q3(result){
 
 
 
-
-function proc_q4(result){
-    $("#get_q4").empty();
-    $.each(result, function(index, item){
-        var str = '<tr>';
-        str += '<td>' + item.name + '</td>';
-        str += '<td>' + item.start_price.toLocaleString('en') + '</td>';
-        str += '<td>' + item.end_price.toLocaleString('en') + '</td>';
-
-        if ( item.start_price < item.end_price ) {
-            // 상승
-            str += '<td class="text-success">' + item.changes.toLocaleString('en') + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
-        } else if (item.start_price > item.end_price){
-            // 보합 or 하락
-            str += '<td class="text-danger">' + item.changes.toLocaleString('en') + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
-        } else {
-            str += '<td>' + item.changes.toLocaleString('en') + '</td>';
-        }
-
-        str += '<td>' + item.sum_gikwan.toLocaleString('en') + '</td>';
-        str += '<td>' + item.sum_foreign.toLocaleString('en') + '</td>';
-        $('#get_q4').append(str);
-    });
-    $('#get_q4').append('</tr>');
-}
-
-function proc_q5(result){
-    $("#get_q5").empty();
-    $.each(result, function(index, item){
-        var str = '<tr>';
-        str += '<td>' + item.name + '</td>';
-        str += '<td>' + item.start_price.toLocaleString('en') + '</td>';
-        str += '<td>' + item.end_price.toLocaleString('en') + '</td>';
-
-        if ( item.start_price < item.end_price ) {
-            // 상승
-            str += '<td class="text-success">' + item.changes.toLocaleString('en') + ' <i class="mdi mdi-arrow-up-bold"></i></td>';
-        } else if (item.start_price > item.end_price){
-            // 보합 or 하락
-            str += '<td class="text-danger">' + item.changes.toLocaleString('en') + ' <i class="mdi mdi-arrow-down-bold"></i></td>';
-        } else {
-            str += '<td>' + item.changes.toLocaleString('en') + '</td>';
-        }
-
-        str += '<td>' + item.sum_gikwan.toLocaleString('en') + '</td>';
-        str += '<td>' + item.sum_foreign.toLocaleString('en') + '</td>';
-        $('#get_q5').append(str);
-    });
-    $('#get_q5').append('</tr>');
-}
-
-function func_q3(cdate, gubun){
+function func_whobuy(cdate, gubun){
     var get = 'GET METHOD CALL';
     var url = '/v1/q3/?cdate=' + cdate + '&gubun=' + gubun
     console.log(url)
@@ -90,44 +39,7 @@ function func_q3(cdate, gubun){
             if (result) {
                 console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
-                proc_q3(result.list);
-            }
-        }
-    });
-}
-function func_q4(cdate, gubun){
-    var get = 'GET METHOD CALL';
-    var url = '/v1/q3/?cdate=' + cdate + '&gubun=' + gubun
-    console.log(url)
-    $.ajax({
-        type: 'GET',
-        url: url,
-        dataType: 'json',
-        data: {data:get},
-        success: function(result) {
-            if (result) {
-                console.log(result);
-                $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
-                proc_q4(result.list);
-            }
-        }
-    });
-}
-function func_q5(cdate, gubun){
-    var get = 'GET METHOD CALL';
-    var url = '/v1/q3/?cdate=' + cdate + '&gubun=' + gubun
-    console.log(url)
-
-    $.ajax({
-        type: 'GET',
-        url: url,
-        dataType: 'json',
-        data: {data:get},
-        success: function(result) {
-            if (result) {
-                console.log(result);
-                $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
-                proc_q5(result.list);
+                proc_whobuy(result.list);
             }
         }
     });
@@ -157,11 +69,10 @@ function setDate() {
     var dt = x.replace(/-/g, '');
     console.log(dt);
 //	var dt = moment(x).format('YYYYMMDD');
-    func_q3(dt, 'gikwan');
-    func_q4(dt, 'foreign');
-    func_q5(dt, 'all');
+    var sector = document.querySelector("input[name=chk_info]:checked").value;
+    console.log(sector)
+    func_whobuy(dt, sector);
 }
-
 
 $(document).ready(function(){
     var date = new Date();
@@ -178,9 +89,14 @@ $(document).ready(function(){
     $("#id_getdate").attr("value", today);
 
     var dt = today.replace(/-/g, '');
-    func_q3(dt, 'gikwan');
-    func_q4(dt, 'foreign');
-    func_q5(dt, 'all');
 
+    var sector = document.querySelector("input[name=chk_info]:checked").value;
+    console.log(sector)
+    func_whobuy(dt, sector);
+
+
+//    func_q3(dt, 'gikwan');
+//    func_q4(dt, 'foreign');
+//    func_q5(dt, 'all');
 
 });

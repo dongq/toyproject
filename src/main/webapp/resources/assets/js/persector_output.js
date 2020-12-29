@@ -41,17 +41,11 @@ function func_persector(sector){
 
 
 
-function func_checked() {
-    var sector = document.querySelector("input[name=chk_info]:checked").value;
+function func_checked(sector) {
     func_persector(sector);
 }
 
 $(document).ready(function(){
-    $("input:radio[name=chk_info]").click(function()
-    {
-        func_checked();
-    })
-
     var sector = document.querySelector("input[name=chk_info]:checked").value;
     func_persector(sector);
 
