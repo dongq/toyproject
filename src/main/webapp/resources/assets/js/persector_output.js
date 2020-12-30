@@ -39,33 +39,33 @@ function func_persector(sector){
     });
 }
 
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
 
-
-function func_checked(sector) {
-    func_persector(sector);
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    var newSkill_Text = document.getElementById("myDropdown");
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }
 
 $(document).ready(function(){
-    var sector = document.querySelector("input[name=chk_info]:checked").value;
-    func_persector(sector);
+    var paramsList = location.search.substring(1).split("?"); //파라미터가 담긴 배열
+    console.log(paramsList);
 
+    if (paramsList == "")
+        func_persector("반도체 및 관련장비");
+    else
+        func_persector(paramsList);
 
-
-
- //  var date = new Date();
- //  date.setDate(date.getDate() - 30);
-
- //  var day = date.getDate();
- //  var month = date.getMonth() + 1;
- //  var year = date.getFullYear();
-
- //  if (month < 10) month = "0" + month;
- //  if (day < 10) day = "0" + day;
-
- //  var today = year + "-" + month + "-" + day;
- //  $("#id_getdate").attr("value", today);
-
- //  var dt = today.replace(/-/g, '');
- //  func_trend(dt);
 });
 
