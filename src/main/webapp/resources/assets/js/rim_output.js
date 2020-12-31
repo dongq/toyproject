@@ -77,7 +77,6 @@ function func_q1(currentPage, dataPerPage, sortColumn){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_q1(result.list);
             }

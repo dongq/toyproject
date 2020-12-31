@@ -34,8 +34,6 @@ function func_trend(cdate){
     var get = 'GET METHOD CALL';
     var url1 = '/v1/qtrend/?cdate=' + cdate
 
-    console.log('func_trend : ' + url1);
-
     $.ajax({
         type: 'GET',
         url: url1,
@@ -43,7 +41,6 @@ function func_trend(cdate){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_trend(result.list);
             }
@@ -70,10 +67,7 @@ function set_max_to_today(){
 
 function setDate() {
     var x = document.getElementById('id_getdate').value; //"Pulling" the value entered
-    console.log(typeof x);
-    console.log(x);
     var dt = x.replace(/-/g, '');
-    console.log(dt);
 //	var dt = moment(x).format('YYYYMMDD');
     func_trend(dt);
 }

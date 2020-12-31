@@ -22,8 +22,6 @@ function func_persector(sector){
     var get = 'GET METHOD CALL';
     var url1 = '/v1/persector/?sector=FICS  ' + sector;
 
-    console.log('func_persector : ' + url1);
-
     $.ajax({
         type: 'GET',
         url: url1,
@@ -31,7 +29,6 @@ function func_persector(sector){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_q1(result.list);
             }
@@ -60,7 +57,6 @@ window.onclick = function(event) {
 
 $(document).ready(function(){
     var paramsList = location.search.substring(1).split("?"); //파라미터가 담긴 배열
-    console.log(paramsList);
 
     if (paramsList == "")
         func_persector("반도체 및 관련장비");

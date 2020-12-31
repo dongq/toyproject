@@ -24,9 +24,10 @@ function func_q6(updown){
 
     if(updown == 'up')
         url = '/v1/q6';
-    else
+    else if (updown == 'down')
         url = '/v1/q7';
-    console.log('['+url+']');
+    else
+        url = '/v1/q6new';
 
     $.ajax({
         type: 'GET',
@@ -35,7 +36,6 @@ function func_q6(updown){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_q6(result.list);
             }
@@ -44,13 +44,11 @@ function func_q6(updown){
 }
 
 function func_checked(val) {
-    console.log(val);
     func_q6(val);
 }
 
 $(document).ready(function(){
     var updown = document.querySelector("input[name=chk_info]:checked").value;
-    console.log('value : ['+updown+']');
     func_q6(updown);
 });
 

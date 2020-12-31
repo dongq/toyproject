@@ -29,7 +29,6 @@ function proc_whobuy(result){
 function func_whobuy(cdate, gubun){
     var get = 'GET METHOD CALL';
     var url = '/v1/q3/?cdate=' + cdate + '&gubun=' + gubun
-    console.log(url)
     $.ajax({
         type: 'GET',
         url: url,
@@ -37,7 +36,6 @@ function func_whobuy(cdate, gubun){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_whobuy(result.list);
             }
@@ -64,13 +62,9 @@ function set_max_to_today(){
 
 function setDate() {
     var x = document.getElementById('id_getdate').value; //"Pulling" the value entered
-    console.log(typeof x);
-    console.log(x);
     var dt = x.replace(/-/g, '');
-    console.log(dt);
 //	var dt = moment(x).format('YYYYMMDD');
     var sector = document.querySelector("input[name=chk_info]:checked").value;
-    console.log(sector)
     func_whobuy(dt, sector);
 }
 
@@ -91,7 +85,6 @@ $(document).ready(function(){
     var dt = today.replace(/-/g, '');
 
     var sector = document.querySelector("input[name=chk_info]:checked").value;
-    console.log(sector)
     func_whobuy(dt, sector);
 
 

@@ -133,7 +133,6 @@ function func_jisu(){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_jisu(result.list);
             }
@@ -151,7 +150,6 @@ function func_adr_current(){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_adr_current(result.list);
             }
@@ -170,7 +168,6 @@ function func_adr_hist(){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_adr_hist(result.list);
             }
@@ -189,7 +186,6 @@ function func_credit(){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_credit(result.list);
             }
@@ -209,7 +205,6 @@ function func_market(){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_market(result.list);
             }

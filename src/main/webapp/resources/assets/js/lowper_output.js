@@ -17,12 +17,10 @@ function proc_q2(result){
 
 function func_paging2(totalData, dataPerPage, pageCount, currentPage) {
 
-    console.log("currentPage : " + currentPage);
 
     var totalPage = Math.ceil(totalData / dataPerPage);    // 총 페이지 수
     var pageGroup = Math.ceil(currentPage / pageCount);    // 페이지 그룹
 
-    console.log("pageGroup : " + pageGroup);
 
     var last = pageGroup * pageCount;    // 화면에 보여질 마지막 페이지 번호
     if (last > totalPage)
@@ -31,10 +29,6 @@ function func_paging2(totalData, dataPerPage, pageCount, currentPage) {
     var next = last + 1;
     var prev = first - 1;
 
-    console.log("last : " + last);
-    console.log("first : " + first);
-    console.log("next : " + next);
-    console.log("prev : " + prev);
     var $pingingView = $("#paging2");
     var html = "";
 
@@ -91,7 +85,6 @@ function func_q2(currentPage, dataPerPage, sortColumn){
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
                 proc_q2(result.list);
 

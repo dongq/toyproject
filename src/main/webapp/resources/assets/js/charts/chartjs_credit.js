@@ -15,7 +15,6 @@ $(function () {
         data: {data:get},
         success: function(result) {
             if (result) {
-                console.log(result);
                 $('#get_output').append('success: ' + result.success + '<br>' + 'msg: ' + result.msg);
             }
             $.each(result.list, function(inx, obj){
