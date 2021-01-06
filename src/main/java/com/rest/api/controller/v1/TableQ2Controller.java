@@ -27,10 +27,11 @@ public class TableQ2Controller {
     @GetMapping(value = "/q2")
     public ListResult<TableQ2> findAllTableQ2(@PageableDefault Pageable pageable) {
         Page<TableQ2> result =   tableQ2Service.getList(pageable);
-        System.out.println("PAGE SIZE : " + result.getSize());
-        System.out.println("TOTAL PAGES : " + result.getTotalPages());
-        System.out.println("TOTAL COUNT : " + result.getTotalElements());
-        System.out.println("NEXT : " + result.nextPageable());
+//        System.out.println("PAGE SIZE : " + result.getSize());
+//        System.out.println("TOTAL PAGES : " + result.getTotalPages());
+//        System.out.println("TOTAL COUNT : " + result.getTotalElements());
+        System.out.println("[REQ] LOWPER : " + result.nextPageable());
+
 
         List<TableQ2> resultlist = result.getContent();
         return responseService.getListResult(resultlist);

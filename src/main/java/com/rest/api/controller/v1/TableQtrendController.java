@@ -20,6 +20,7 @@ public class TableQtrendController {
     @GetMapping(path = "/qtrend")
     public ListResult<TableQtrend> get_Trend(@RequestParam("cdate") String cdate) {
         List<TableQtrend> resultlist = tableQtrendJpaRepo.get_Trend(cdate);
+        System.out.println("[REQ] TREND cdate : " + cdate);
         return responseService.getListResult(resultlist);
     }
 

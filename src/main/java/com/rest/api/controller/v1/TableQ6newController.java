@@ -16,6 +16,8 @@ public class TableQ6newController {
 
     @GetMapping(value = "/q6new")
     public ListResult<TableQ6new> findAllTableQ6new() {
+        System.out.println("[REQ] CONSENSUS NEW");
+
         return responseService.getListResult(tableQ6newJpaRepo.findAll());
     }
 }

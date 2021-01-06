@@ -32,17 +32,17 @@ public class TableQ1Controller {
     @GetMapping(value = "/q1")
     public ListResult<TableQ1> findAllTableQ1(@PageableDefault Pageable pageable) {
         Page<TableQ1> result =   tableQ1Service.getList(pageable);
-        System.out.println("PAGE SIZE : " + result.getSize());
-        System.out.println("TOTAL PAGES : " + result.getTotalPages());
-        System.out.println("TOTAL COUNT : " + result.getTotalElements());
-        System.out.println("NEXT : " + result.nextPageable());
+  //     System.out.println("PAGE SIZE : " + result.getSize());
+  //     System.out.println("TOTAL PAGES : " + result.getTotalPages());
+  //     System.out.println("TOTAL COUNT : " + result.getTotalElements());
+       System.out.println("[REQ] RIM : " + result.nextPageable());
 
         List<TableQ1> resultlist = result.getContent();
         return responseService.getListResult(resultlist);
     }
     @GetMapping(value = "/persector")
     public ListResult<TableQ1> findAllTableQ1_sector(@RequestParam("sector") String class_small) {
-        System.out.println("class_small : " + class_small);
+        System.out.println("[REQ] PERSECTOR class_small : " + class_small);
         return responseService.getListResult(tableQ1JpaRepo.findAllByClasssmallOrderByRanking(class_small));
     }
 

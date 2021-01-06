@@ -19,11 +19,14 @@ public class TableQAdrController {
     @GetMapping(path = "/qadrcurrent")
     public ListResult<TableQAdr> get_Adr_current() {
         List<TableQAdr> resultlist = tableQAdrJpaRepo.get_adr_current();
+        System.out.println("[REQ] MAIN ADR CURRENT");
+
         return responseService.getListResult(resultlist);
     }
     @GetMapping(path = "/qadrhist")
     public ListResult<TableQAdr> get_Adr_hist() {
         List<TableQAdr> resultlist = tableQAdrJpaRepo.get_adr_hist();
+        System.out.println("[REQ] MAIN ADR HIST");
         return responseService.getListResult(resultlist);
     }
 }

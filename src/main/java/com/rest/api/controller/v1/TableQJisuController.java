@@ -18,6 +18,7 @@ public class TableQJisuController {
 
     @GetMapping(value = "/qjisu")
     public ListResult<TableQJisu> findAllTableQJisu() {
+        System.out.println("[REQ] MAIN JISU");
         return responseService.getListResult(tableQJisuJpaRepo.findAllByOrderByIdAsc());
     }
 }

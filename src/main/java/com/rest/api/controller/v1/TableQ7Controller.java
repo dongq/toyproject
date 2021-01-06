@@ -16,6 +16,8 @@ public class TableQ7Controller {
 
     @GetMapping(value = "/q7")
     public ListResult<TableQ7> findAllTableQ7() {
+        System.out.println("[REQ] CONSENSUS DOWN");
+
         return responseService.getListResult(tableQ7JpaRepo.findAll());
     }
 }

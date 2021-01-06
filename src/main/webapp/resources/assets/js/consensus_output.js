@@ -43,6 +43,9 @@ function func_q6(updown){
     });
 }
 
+function func_checked(val) {
+//    func_q6(val);
+}
 
 $(document).ready(function(){
 //    var updown = document.querySelector("input[name=chk_info]:checked").value;

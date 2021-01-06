@@ -16,6 +16,8 @@ public class TableQ8Controller {
 
     @GetMapping(value = "/q8")
     public ListResult<TableQ8> findAllTableQ8() {
+        System.out.println("[REQ] MAIN MARKET PBR PER");
+
         return responseService.getListResult(tableQ8JpaRepo.findAll());
     }
 }
