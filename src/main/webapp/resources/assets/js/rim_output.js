@@ -33,7 +33,7 @@ function func_paging1(totalData, dataPerPage, pageCount, currentPage){
         html += "<li class=\"page-item\" text-align='center'><a class=\"page-link\" href=#section-q1 id='prev'><</a></li> ";
 
     for(var i=first; i <= last; i++){
-        html += "<li class=\"page-item\" text-align='center'><a class=\"page-link\" href=#section-q1 id=" + i + ">" + i + "</a></li> ";
+        html += "<li class=\"page-item\" text-align='center'><a class=\"page-link\" href=\"../rim/?" + i + "\" id=" + i + ">" + i + "</a></li> ";
     }
 
     if(last < totalPage)
@@ -61,8 +61,8 @@ function func_paging1(totalData, dataPerPage, pageCount, currentPage){
         var sortColumn = 'ranking'
         if($id == "next")    selectedPage = next;
         if($id == "prev")    selectedPage = prev;
-        func_paging1(totalData, dataPerPage, pageCount, selectedPage);
-        func_q1(selectedPage-1, dataPerPage, sortColumn);
+//        func_paging1(totalData, dataPerPage, pageCount, selectedPage);
+//        func_q1(selectedPage-1, dataPerPage, sortColumn);
     });
 }
 
@@ -92,6 +92,16 @@ $(document).ready(function(){
     var currentPage = 0;
     var sortColumn = 'ranking';
 
-    func_paging1(totalData, dataPerPage, pageCount, 1);
-    func_q1(currentPage, dataPerPage, sortColumn);
+    var paramsList = location.search.substring(1).split("?"); //파라미터가 담긴 배열
+
+    if (paramsList == "" || paramsList == 1 || paramsList >= 6){
+        func_paging1(totalData, dataPerPage, pageCount, 1);
+        func_q1(currentPage, dataPerPage, sortColumn);
+    }
+    else{
+        func_paging1(totalData, dataPerPage, pageCount, paramsList);
+        func_q1(paramsList-1, dataPerPage, sortColumn);
+    }
+
+
 });

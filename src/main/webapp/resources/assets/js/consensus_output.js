@@ -43,12 +43,29 @@ function func_q6(updown){
     });
 }
 
-function func_checked(val) {
-    func_q6(val);
-}
 
 $(document).ready(function(){
-    var updown = document.querySelector("input[name=chk_info]:checked").value;
-    func_q6(updown);
+//    var updown = document.querySelector("input[name=chk_info]:checked").value;
+//    func_q6(updown);
+
+    var paramsList = location.search.substring(1).split("?"); //파라미터가 담긴 배열
+//    console.log(paramsList);
+
+    if (paramsList == "" || paramsList == 'up') {
+        document.getElementsByClassName('btn btn-outline-info')[0].classList.add("active");
+        func_q6('up');
+    }
+    else{
+        if (paramsList == 'down')
+            document.getElementsByClassName('btn btn-outline-info')[1].classList.add("active");
+        else
+            document.getElementsByClassName('btn btn-outline-info')[2].classList.add("active");
+        func_q6(paramsList);
+    }
+
+
+
+
+
 });
 

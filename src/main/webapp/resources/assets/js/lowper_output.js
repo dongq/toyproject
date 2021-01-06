@@ -36,7 +36,7 @@ function func_paging2(totalData, dataPerPage, pageCount, currentPage) {
         html += "<li class=\"page-item\" text-align='center'><a class=\"page-link\" href=#section-q2 id='prev'><</a></li> ";
 
     for (var i = first; i <= last; i++) {
-        html += "<li class=\"page-item\" text-align='center'><a class=\"page-link\" href=#section-q2 id=" + i + ">" + i + "</a></li> ";
+        html += "<li class=\"page-item\" text-align='center'><a class=\"page-link\" href=\"../lowper/?" + i + "\" id=" + i + ">" + i + "</a></li> ";
     }
 
 
@@ -68,8 +68,8 @@ function func_paging2(totalData, dataPerPage, pageCount, currentPage) {
         if ($id == "next") selectedPage = next;
         if ($id == "prev") selectedPage = prev;
 
-        func_paging2(totalData, dataPerPage, pageCount, selectedPage);
-        func_q2(selectedPage - 1, dataPerPage, sortColumn);
+//        func_paging2(totalData, dataPerPage, pageCount, selectedPage);
+//        func_q2(selectedPage - 1, dataPerPage, sortColumn);
     });
 }
 
@@ -99,7 +99,16 @@ $(document).ready(function(){
     var currentPage = 0;
     var sortColumn = 'ranking';
 
-    func_paging2(totalData, dataPerPage, pageCount, 1);
-    func_q2(currentPage, dataPerPage, sortColumn);
+
+    var paramsList = location.search.substring(1).split("?"); //파라미터가 담긴 배열
+
+    if (paramsList == "" || paramsList == 1 || paramsList >= 6){
+        func_paging2(totalData, dataPerPage, pageCount, 1);
+        func_q2(currentPage, dataPerPage, sortColumn);
+    }
+    else{
+        func_paging2(totalData, dataPerPage, pageCount, paramsList);
+        func_q2(paramsList-1, dataPerPage, sortColumn);
+    }
 });
 
