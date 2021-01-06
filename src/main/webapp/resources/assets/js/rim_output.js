@@ -86,15 +86,15 @@ function func_q1(currentPage, dataPerPage, sortColumn){
 
 
 $(document).ready(function(){
-    var totalData = 100;    // 총 데이터 수
+    var totalData = 200;    // 총 데이터 수
     var dataPerPage = 20;    // 한 페이지에 나타낼 데이터 수
-    var pageCount = 5;        // 한 화면에 나타낼 페이지 수
+    var pageCount = 10;        // 한 화면에 나타낼 페이지 수
     var currentPage = 0;
     var sortColumn = 'ranking';
 
     var paramsList = location.search.substring(1).split("?"); //파라미터가 담긴 배열
 
-    if (paramsList == "" || paramsList == 1 || paramsList >= 6){
+    if (paramsList == "" || paramsList == 1 || paramsList >= 11){
         func_paging1(totalData, dataPerPage, pageCount, 1);
         func_q1(currentPage, dataPerPage, sortColumn);
     }
