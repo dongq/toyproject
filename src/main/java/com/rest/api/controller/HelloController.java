@@ -46,6 +46,10 @@ public class HelloController {
     public String hello_persector(){
         return "persector";
     }
+    @GetMapping(value = "/sitemap.xml")
+    public String hello_sitemap(){
+        return "sitemap.xml";
+    }
 
 
 

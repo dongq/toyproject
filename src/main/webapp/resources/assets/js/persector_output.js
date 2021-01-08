@@ -57,7 +57,6 @@ window.onclick = function(event) {
 
 $(document).ready(function(){
     var paramsList = location.search.substring(1).split("?"); //파라미터가 담긴 배열
-
     if (paramsList == "")
         func_persector("반도체 및 관련장비");
     else
