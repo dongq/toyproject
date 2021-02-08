@@ -1,5 +1,6 @@
 
 function proc_whobuy(result){
+    console.log(result)
     $("#get_q3").empty();
     $.each(result, function(index, item){
         var str = '<tr>';
@@ -22,6 +23,7 @@ function proc_whobuy(result){
         $('#get_q3').append(str);
     });
     $('#get_q3').append('</tr>');
+    console.log("done")
 }
 
 
