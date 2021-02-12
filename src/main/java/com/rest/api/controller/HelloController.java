@@ -50,6 +50,10 @@ public class HelloController {
     public String hello_sitemap(){
         return "sitemap.xml";
     }
+    @GetMapping(value = "/ads.txt")
+    public String hello_ads(){
+        return "ads.txt";
+    }
 
 
 
