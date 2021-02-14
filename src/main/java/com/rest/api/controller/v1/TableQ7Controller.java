@@ -7,6 +7,9 @@ import com.rest.api.service.ResponseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "/v1")
@@ -16,7 +19,9 @@ public class TableQ7Controller {
 
     @GetMapping(value = "/q7")
     public ListResult<TableQ7> findAllTableQ7() {
-        System.out.println("[REQ] CONSENSUS DOWN");
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String today1 = format1.format(new Date());
+        System.out.println(today1 + "[REQ] CONSENSUS DOWN");
 
         return responseService.getListResult(tableQ7JpaRepo.findAll());
     }

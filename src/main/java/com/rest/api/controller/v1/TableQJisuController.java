@@ -9,6 +9,9 @@ import com.rest.api.service.ResponseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "/v1")
@@ -18,7 +21,9 @@ public class TableQJisuController {
 
     @GetMapping(value = "/qjisu")
     public ListResult<TableQJisu> findAllTableQJisu() {
-        System.out.println("[REQ] MAIN JISU");
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String today1 = format1.format(new Date());
+        System.out.println(today1 + " [REQ] MAIN JISU");
         return responseService.getListResult(tableQJisuJpaRepo.findAllByOrderByIdAsc());
     }
 }

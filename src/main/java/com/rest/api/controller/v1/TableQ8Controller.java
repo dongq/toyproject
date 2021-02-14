@@ -7,6 +7,9 @@ import com.rest.api.service.ResponseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "/v1")
@@ -16,7 +19,9 @@ public class TableQ8Controller {
 
     @GetMapping(value = "/q8")
     public ListResult<TableQ8> findAllTableQ8() {
-        System.out.println("[REQ] MAIN MARKET PBR PER");
+//       SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+//       String today1 = format1.format(new Date());
+//       System.out.println(today1 + " [REQ] MAIN MARKET PBR PER");
 
         return responseService.getListResult(tableQ8JpaRepo.findAll());
     }

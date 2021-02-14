@@ -8,6 +8,8 @@ import com.rest.api.service.ResponseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -19,8 +21,10 @@ public class TableQtrendController {
 
     @GetMapping(path = "/qtrend")
     public ListResult<TableQtrend> get_Trend(@RequestParam("cdate") String cdate) {
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String today1 = format1.format(new Date());
         List<TableQtrend> resultlist = tableQtrendJpaRepo.get_Trend(cdate);
-        System.out.println("[REQ] TREND cdate : " + cdate);
+        System.out.println(today1 + " [REQ] TREND cdate : " + cdate);
         return responseService.getListResult(resultlist);
     }
 

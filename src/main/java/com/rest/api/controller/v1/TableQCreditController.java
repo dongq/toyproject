@@ -20,12 +20,12 @@ public class TableQCreditController {
    @GetMapping(path = "/qcredit5")   // 최근 5일
    public ListResult<TableQCredit> get_credit() {
        List<TableQCredit> resultlist = tableQCreditJpaRepo.get_credit();
-       System.out.println("[REQ] MAIN CREDIT RECENT 5 DAY");
+ //      System.out.println("[REQ] MAIN CREDIT RECENT 5 DAY");
        return responseService.getListResult(resultlist);
    }
     @GetMapping(path = "/qcredit")
     public ListResult<TableQCredit> findAllTableQCredit() {
-        System.out.println("[REQ] MAIN CREDIT RECENT 500 DAY");
+   //     System.out.println("[REQ] MAIN CREDIT RECENT 500 DAY");
         return responseService.getListResult(tableQCreditJpaRepo.findTop500ByOrderByCdateDesc());
     }
 

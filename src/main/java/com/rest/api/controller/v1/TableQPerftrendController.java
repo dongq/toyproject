@@ -20,7 +20,7 @@ public class TableQPerftrendController {
 
     @GetMapping(value = "/qperftrend")
     public ListResult<TableQPerftrend> findAllTableQPerftrend() {
-        System.out.println("[REQ] MAIN PERFORMANCE TREND");
+//        System.out.println("[REQ] MAIN PERFORMANCE TREND");
         return responseService.getListResult(tableQPerftrendJpaRepo.findAllByOrderByDaysAsc());
     }
 }

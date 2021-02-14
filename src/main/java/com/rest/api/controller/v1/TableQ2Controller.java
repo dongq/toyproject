@@ -15,6 +15,8 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -26,11 +28,13 @@ public class TableQ2Controller {
 
     @GetMapping(value = "/q2")
     public ListResult<TableQ2> findAllTableQ2(@PageableDefault Pageable pageable) {
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String today1 = format1.format(new Date());
         Page<TableQ2> result =   tableQ2Service.getList(pageable);
 //        System.out.println("PAGE SIZE : " + result.getSize());
 //        System.out.println("TOTAL PAGES : " + result.getTotalPages());
 //        System.out.println("TOTAL COUNT : " + result.getTotalElements());
-        System.out.println("[REQ] LOWPER : " + result.nextPageable());
+        System.out.println(today1 + " [REQ] LOWPER : " + result.nextPageable());
 
 
         List<TableQ2> resultlist = result.getContent();

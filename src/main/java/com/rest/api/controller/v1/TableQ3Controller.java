@@ -9,6 +9,8 @@ import com.rest.api.service.ResponseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -20,7 +22,9 @@ public class TableQ3Controller {
 
     @GetMapping(path = "/q3")
     public ListResult<TableQ3> get_whobuy(@RequestParam("cdate") String cdate, @RequestParam("gubun") String gubun) {
-        System.out.println("[REQ] WHOBUY cdate : " + cdate + " gubun : " + gubun);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String today1 = format1.format(new Date());
+        System.out.println(today1 + " [REQ] WHOBUY cdate : " + cdate + " gubun : " + gubun);
 
         List<TableQ3> resultlist = tableQ3JpaRepo.get_whobuy(cdate, gubun);
         return responseService.getListResult(resultlist);
