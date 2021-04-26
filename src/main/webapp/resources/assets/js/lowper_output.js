@@ -3,7 +3,7 @@ function proc_q2(result){
     $("#get_q2").empty();
     $.each(result, function(index, item){
         var str = '<tr><td>' + item.ranking + '</td>';
-        str += '<td>' + item.code + '</td>';
+        str += '<td><a href="https://finance.naver.com/item/main.nhn?code=' + item.code + '">' + item.code + '</a></td>';
         str += '<td>' + item.name + '</td>';
         str += '<td>' + item.expected.toLocaleString('en') + '</td>';
         str += '<td>' + item.totalvalue.toLocaleString('en') + '</td>';
